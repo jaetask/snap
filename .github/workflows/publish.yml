@@ -1,6 +1,8 @@
 name: publish
-# Manual for now: run it from the Actions tab once NPM_TOKEN is set. Add a `push: tags: ["v*"]` trigger then.
+# Trusted publishing: npm trusts this workflow through GitHub's OIDC token, so no npm token is stored.
 on:
+  push:
+    tags: ["v*"]
   workflow_dispatch:
 permissions:
   contents: read
@@ -15,6 +17,7 @@ jobs:
           node-version: 22
           cache: npm
           registry-url: https://registry.npmjs.org
+      - run: npm install -g npm@latest
       - run: npm ci
       - run: npm run typecheck
       - run: npm test
@@ -22,5 +25,3 @@ jobs:
         if: github.ref_type == 'tag'
         run: test "v$(node -p 'require("./package.json").version')" = "$GITHUB_REF_NAME"
       - run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -23,15 +23,11 @@ process.exit(failed === 0 ? 0 : 1)
 
 ## Install
 
-From GitHub, at a tag:
-
 ```
-pnpm add -D github:jaetask/snap#v0.1.0
+npm i -D @jaetask/snap
 ```
 
-`npm i -D github:jaetask/snap#v0.1.0` works too. It builds on install. Node 22 or later.
-
-On npm as `@jaetask/snap` later.
+Or from GitHub at a tag: `pnpm add -D github:jaetask/snap#v0.1.0`. That builds on install, so pnpm 10 needs `"@jaetask/snap": true` under `allowBuilds` in `pnpm-workspace.yaml`. Node 22 or later.
 
 ## Credits
 

@@ -1,0 +1,50 @@
+{
+  "name": "@jaetask/snap",
+  "version": "0.1.0",
+  "description": "Expect tests: an input file per case, an approved name.expect.md beside it.",
+  "keywords": [
+    "expect-test",
+    "snapshot",
+    "golden",
+    "testing"
+  ],
+  "author": "jaetask",
+  "license": "MIT",
+  "homepage": "https://github.com/jaetask/snap#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaetask/snap.git"
+  },
+  "bugs": "https://github.com/jaetask/snap/issues",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepare": "tsc",
+    "test": "tsx --test src/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "22.18.0",
+    "tsx": "4.20.5",
+    "typescript": "5.9.2"
+  }
+}

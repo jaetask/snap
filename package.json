@@ -1,6 +1,6 @@
 {
   "name": "@jaetask/snap",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Expect tests: an input file per case, an approved name.expect.md beside it.",
   "keywords": [
     "expect-test",

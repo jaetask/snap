@@ -27,7 +27,9 @@ process.exit(failed === 0 ? 0 : 1)
 npm i -D @jaetask/snap
 ```
 
-Or from GitHub at a tag: `pnpm add -D github:jaetask/snap#v0.1.0`. That builds on install, so pnpm 10 needs `"@jaetask/snap": true` under `allowBuilds` in `pnpm-workspace.yaml`. Node 22 or later.
+Or from GitHub at a tag: `pnpm add -D github:jaetask/snap#v0.1.1`. That builds on install, so pnpm 10 needs `"@jaetask/snap": true` under `allowBuilds` in `pnpm-workspace.yaml`. Node 22 or later.
+
+A version tag (`v0.1.1`) publishes that version to npm through the `publish` workflow and npm trusted publishing, so no npm token is stored.
 
 ## Credits
 
